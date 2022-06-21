@@ -113,7 +113,7 @@ class CurrentLocationWeather: UIViewController, CLLocationManagerDelegate {
     func setupBinding() {
         
         viewModel.weatherData.bind { [weak self] data in
-            guard let data = data, let self = self else { return }
+            guard let self = self else { return }
             
             DispatchQueue.main.async { [self] in
                 
