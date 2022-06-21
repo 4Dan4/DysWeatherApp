@@ -114,21 +114,15 @@ class CurrentLocationWeather: UIViewController, CLLocationManagerDelegate {
         
         viewModel.weatherData.bind { [weak self] data in
             guard let data = data, let self = self else { return }
+            
             DispatchQueue.main.async { [self] in
                 
-                self.createItem(
-                                  name: data.name,
-                                  temperature: data.main.temp,
-                                  tempMax: data.main.tempMax,
-                                  visibility: data.visibility,
-                                  feelsLike: data.main.feelsLike,
-                                  temMin: data.main.tempMin
-                )
-                
-                self.tempLabel.text = "Temperature - \(self.viewModel.weatherData.value?.main.temp ?? 0)℉"
+                self.tempLabel.text = "Temperature - \(self.viewModel.weatherData.value?.main.temp ?? 0)K"
                 self.visibilityLabel.text = "Visibility - \(self.viewModel.weatherData.value?.visibility ?? 0) miles"
-                self.feelsLabel.text = "Feels like - \(self.viewModel.weatherData.value?.main.feelsLike ?? 0)℉"
+                self.feelsLabel.text = "Feels like - \(self.viewModel.weatherData.value?.main.feelsLike ?? 0)K"
+            
             }
+            
         }
     
     }

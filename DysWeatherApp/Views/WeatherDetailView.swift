@@ -15,7 +15,7 @@ class WeatherDetailView: UIViewController {
     
     private lazy var cityNameLabel: UILabel = {
         let label = UILabel()
-        label.text = (city.name ?? "") + " - " + "\(city.tempMax)" + "℉"
+        label.text = (city.name ?? "") + " - " + "\(city.tempMax)" + "K"
         return label
     }()
     
@@ -27,19 +27,19 @@ class WeatherDetailView: UIViewController {
     
     private lazy var feelsLike: UILabel = {
         let label = UILabel()
-        label.text = "Feels like - \(city.feelsLike)℉"
+        label.text = "Feels like - \(city.feelsLike)K"
         return label
     }()
     
     private lazy var tempMax: UILabel = {
         let label = UILabel()
-        label.text = "Max temperature - \(city.tempMax)℉"
+        label.text = "Max temperature - \(city.tempMax)K"
         return label
     }()
     
     private lazy var tempMin: UILabel = {
         let label = UILabel()
-        label.text = "Min temperature - \(city.tempMin)℉"
+        label.text = "Min temperature - \(city.tempMin)K"
         return label
     }()
     
