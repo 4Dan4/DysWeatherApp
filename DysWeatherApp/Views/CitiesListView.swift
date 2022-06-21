@@ -55,7 +55,6 @@ class CitiesListView: UIViewController {
         super.viewDidLoad()
         view.backgroundColor = .systemGroupedBackground
         
-        models.removeAll()
         self.getAllItems()
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: "cell")
         tableView.delegate = self
